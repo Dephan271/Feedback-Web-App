@@ -12,7 +12,7 @@ A simple and efficient web application for collecting and managing user feedback
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/feedback-app.git
+   git clone https://github.com/Dephan271/Feedback-Web-App.git
    ```
 2. Navigate to the project directory:
    ```bash
