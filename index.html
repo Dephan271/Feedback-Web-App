@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <style>
+      * {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f0f4c3;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      h2 {
+        color: #33691e;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      form {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #33691e;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #c5e1a5;
+        border-radius: 4px;
+      }
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="number"]:focus,
+      textarea:focus {
+        border-color: #33691e;
+        outline: none;
+        box-shadow: 0 0 3px rgba(51, 105, 30, 0.5);
+      }
+      button[type="submit"] {
+        background-color: #33691e;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+      }
+      button[type="submit"]:hover {
+        background-color: #1b5e20;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Customer Feedback Form</h2>
+
+    <form action="http://localhost:3001/submit-feedback" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="rating">Rating (1-5):</label>
+      <input type="number" id="rating" name="rating" min="1" max="5" required />
+
+    <label for="comments">Comments:</label>
+    <textarea
+      id="comments"
+      name="comments"
+      rows="4"
+      cols="30"
+      required
+      style="resize: none;"
+    ></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+    <script>
+      function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const rating = document.getElementById("rating").value;
+        const comments = document.getElementById("comments").value;
+        if (!name || !email || !rating || !comments) {
+          alert("All fields are required!");
+          return false;
+        }
+        if (rating < 1 || rating > 5) {
+          alert("Rating must be between 1 and 5!");
+          return false;
+        }
+        return true; // Allow form submission if validation passes
+      }
+    </script>
+  </body>
+</html>
