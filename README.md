@@ -5,7 +5,6 @@ A simple and efficient web application for collecting and managing user feedback
 ## Features
 
 - **User Feedback Submission**: Allows users to share feedback easily through a simple form.
-- **Admin Feedback Management**: Enables administrators to view, filter, and delete feedback.
 - **Database Integration**: Utilizes MongoDB with Mongoose for seamless data storage and management.
 
 ## Installation
